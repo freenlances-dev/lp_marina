@@ -6,8 +6,8 @@ import heroData from '../data/heroContent.json';
 import Button from './button.astro';
 ---
 
-<div id="container" class="bg-[url('./public/images/bg.png')] h-[900px] bg-no-repeat bg-cover">
-	<div id="header" class="max-w-[1280px] mx-auto pt-6 flex justify-between items-center">
+<div id="container" class="bg-[url('./public/images/bg.png')] w-screen h-[900px] bg-no-repeat bg-cover bg-center">
+	<div id="header" class="max-w-[1500px] mx-auto pt-6 flex justify-between items-center">
 		<Image src={logoHeader} alt="logo topo" class="w-[200px]" loading="eager"/>
 		<div id="nav-links" class="flex space-x-4 font-playfair items-center">
 			{/* TODO: Assim que tiver as partes de cada um, modificar para as tags corretas */}
@@ -27,4 +27,10 @@ import Button from './button.astro';
     </p>
     <Button text={heroData.button_text} />
   </div>
+	<footer class="bg-neutral-800 text-white py-8 text-center bottom-0 w-full absolute">
+		<p>&copy; {new Date().getFullYear()} Barroquelo Viana Advogados. Todos os direitos reservados.</p>
+		<p class="mt-2">
+			<a href="/politica-de-privacidade" class="underline hover:text-gray-300">Política de Privacidade</a>
+		</p>
+	</footer>
 </div>
