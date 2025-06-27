@@ -1,0 +1,20 @@
+---
+import building from "../../public/icons/building.svg";
+import PracticeAreaCard from "./practiceAreaCard.astro";
+import practicesAreasContent from "../data/practicesAreasContent.json";
+---
+
+<article class="bg-neutral-200 pt-[96px] w-full mx-auto text-brown-dark">
+  <div class="max-w-[1420px] mx-auto w-full p-6">
+    <div class="flex flex-col items-center justify-center gap-6 mb-[96px]">
+      <h1 class="font-medium text-5xl font-playfair">Área de Atuação</h1>
+      <p class="font-poppins text-base text-center max-w-[916px]">Especializada em diversas áreas do Direito, ofereço soluções jurídicas personalizadas para atender às necessidades específicas de cada cliente.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {practicesAreasContent.map((area) => (
+        <PracticeAreaCard icon={area.icon || building} title={area.title} description={area.description} />
+      ))}
+    </div>
+  </div>
+</article>
