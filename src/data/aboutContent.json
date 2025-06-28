@@ -1,0 +1,17 @@
+{
+  "about_title": "Performance estratégica",
+  "about_content_p1": "Marina Barroquelo Viana Grigolli é uma advogada dedicada a fornecer soluções jurídicas eficazes, éticas e centradas no cliente. Formada pela Toledo Prudente (2017) e especialista em Direito Civil e do Consumidor, ela construiu uma carreira sólida, marcada por excelência técnica e um atendimento responsável e personalizado.",
+  "about_content_p2": "Sua prática profissional se distingue pela habilidade em compreender a singularidade de cada caso, elaborando estratégias personalizadas que visam a resolução eficiente de conflitos. Marina acredita firmemente que o Direito deve ser acessível e compreensível, priorizando uma comunicação clara e transparente para fortalecer a confiança e a segurança de seus clientes em todas as etapas do processo jurídico.",
+  "aboutCard": [
+    {
+      "icon": "graduation-hat",
+      "title": "Formação Acadêmica",
+      "description": "Bacharel em Direito - Toledo Prudente, especialista em Direito Civil e do Consumidor"
+    },
+    {
+      "icon": "scales",
+      "title": "Registro Profissional",
+      "description": "OAB/SP nº 123.456, atuação em todo território nacional"
+    }
+  ]
+}
