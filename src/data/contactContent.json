@@ -1,0 +1,23 @@
+{
+  "title": "Entre em contato para agendar uma consulta ou esclarecer suas dúvidas.",
+  "titleCard": "Vamos começar?",
+  "textButton": "Continuar pelo WhatsApp",
+  "contacts": [
+    {
+      "icon": "mail",
+      "description": "ma-bviana@hotmail.com"
+    },
+    {
+      "icon": "phone-call",
+      "description": "18 99784-5088"
+    },
+    {
+      "icon": "maker-pin",
+      "description": "Av. Presidente Vargas, 358, Centro, Osvaldo Cruz - SP, CEP: 17700-075"
+    },
+    {
+      "icon": "clock",
+      "description": "Segunda à Sexta-feira: 09:00h às 18:00h"
+    }
+  ]
+}
