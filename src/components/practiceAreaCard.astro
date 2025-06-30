@@ -15,12 +15,12 @@ const finalIconSrc = dynamicIconModule ? dynamicIconModule.default : '';
 import buildingFallback from '../../public/icons/building.svg';
 ---
 
-<div class="bg-neutral-0 p-8 rounded-lg">
-  <Image alt='Icone de empresa' src={finalIconSrc || buildingFallback} class='size-6 mb-6'/>
-  <h1 class="text-xl font-poppins mb-4">
+<div class="bg-neutral-0 rounded-lg p-4">
+  <Image alt='Icone de empresa' src={finalIconSrc || buildingFallback} class='size-6 mb-1 lg:mb-6'/>
+  <h1 class="text-2xl lg:text-[1.75rem] font-playfair mb-2">
     {title}
   </h1>
-  <p class="font-poppins text-sm">
+  <p class="font-poppins text-lg lg:text-xl">
     {description}
   </p>
 </div>
