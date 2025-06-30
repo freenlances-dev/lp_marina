@@ -1,37 +1,25 @@
 ---
-import '../styles/global.css';
-import { Image } from 'astro:assets';
-import logoHeader from '../../public/images/logo-header.svg';
-import heroData from '../data/welcomeContent.json';
-import Button from './button.astro';
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import logoHeader from "../../public/images/logo-header.svg";
+import welcomeData from "../data/welcomeContent.json";
+import Button from "./button.astro";
 ---
 
 <div
   id="container"
   class="bg-[url('./public/images/bg.png')] w-screen h-[900px] bg-no-repeat bg-cover bg-center"
 >
-  <div
-    id="header"
-    class="max-w-[1500px] mx-auto pt-6 flex justify-between items-center"
-  >
+  <div id="header" class="max-w-[1500px] mx-auto pt-6 flex justify-between items-center">
     <Image src={logoHeader} alt="logo topo" class="w-[200px]" loading="eager" />
     <div id="nav-links" class="flex space-x-4 font-playfair items-center">
-      {
-        /* TODO: Assim que tiver as partes de cada um, modificar para as tags corretas */
-      }
+      {/* TODO: Assim que tiver as partes de cada um, modificar para as tags corretas */}
       <a href="/sobre" class="text-white hover:text-gray-300">Sobre</a>
-      <a href="/atuacao" class="text-white hover:text-gray-300"
-        >Área de atuação</a
-      >
-      <a href="/experiencia" class="text-white hover:text-gray-300"
-        >Experiência</a
-      >
+      <a href="/atuacao" class="text-white hover:text-gray-300">Área de atuação</a>
+      <a href="/experiencia" class="text-white hover:text-gray-300">Experiência</a>
       <a href="/contato" class="text-white hover:text-gray-300">Contato</a>
     </div>
-    <Button
-      text={heroData.button_text}
-      class="bg-neutral-100 text-neutral-800"
-    />
+    <Button text={welcomeData.button_text} class="bg-neutral-100 text-neutral-800" />
   </div>
   <div
     id="hero-content"
@@ -40,16 +28,11 @@ import Button from './button.astro';
     <h1
       class="text-4xl md:text-6xl font-bold font-playfair mb-4 max-w-2xl leading-tight font-medium"
     >
-      {heroData.title}
+      {welcomeData.title}
     </h1>
-    <p
-      class="text-lg md:text-xl font-playfair mb-8 max-w-xl font-poppins text-4"
-    >
-      {heroData.description}
+    <p class="text-lg md:text-xl font-playfair mb-8 max-w-xl font-poppins text-4">
+      {welcomeData.description}
     </p>
-    <Button
-      text={heroData.button_text}
-      class="bg-neutral-100 text-neutral-800"
-    />
+    <Button text={welcomeData.button_text} class="bg-neutral-100 text-neutral-800" />
   </div>
 </div>

@@ -1,31 +1,31 @@
 [
   {
-    "icon": "building", 
+    "icon": "building",
     "title": "Direito Empresarial",
     "description": "Assessoria jurídica completa para empresas, incluindo contratos, compliance, reestruturação societária e gestão de riscos legais."
   },
   {
-    "icon": "college", 
+    "icon": "college",
     "title": "Direito Civil",
     "description": "Atuação em questões contratuais, responsabilidade civil, direitos reais, família e sucessões, com foco na resolução eficiente de conflitos."
   },
   {
-    "icon": "book", 
+    "icon": "book",
     "title": "Contencioso",
     "description": "Representação em processos judiciais e administrativos, com estratégias processuais customizadas para cada caso."
   },
   {
-    "icon": "hands", 
+    "icon": "hands",
     "title": "Mediação e Arbitragem",
     "description": "Resolução alternativa de conflitos, oferecendo soluções mais rápidas, econômicas e menos desgastantes que o processo judicial."
   },
   {
-    "icon": "home", 
+    "icon": "home",
     "title": "Direito Imobiliário",
     "description": "Assessoria em operações imobiliárias, contratos de compra e venda, locação, usucapião e regularização de imóveis."
   },
   {
-    "icon": "users", 
+    "icon": "users",
     "title": "Direito de Família",
     "description": "Acompanhamento em divórcios, inventários, guarda de filhos, pensão alimentícia e outros assuntos familiares, com sensibilidade e discrição."
   }
