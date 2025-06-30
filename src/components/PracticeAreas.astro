@@ -2,6 +2,8 @@
 import building from "../../public/icons/building.svg";
 import PracticeAreaCard from "./practiceAreaCard.astro";
 import practicesAreasContent from "../data/practicesAreasContent.json";
+import Image from "astro/components/Image.astro";
+import imgPracticeAreas from "../../public/images/img-pratices-area.png";
 ---
 
 <article class="bg-yellow-light pt-[96px] w-full mx-auto">
@@ -16,5 +18,7 @@ import practicesAreasContent from "../data/practicesAreasContent.json";
         <PracticeAreaCard icon={area.icon || building} title={area.title} description={area.description} />
       ))}
     </div>
+    <Image src={imgPracticeAreas} alt="Imagem representantiva" class='hidden lg:inline mt-[96px]'/>
+    
   </div>
 </article>
