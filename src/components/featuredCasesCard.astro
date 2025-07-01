@@ -1,0 +1,120 @@
+---
+import featuredCases from '../data/featuredCases.json';
+
+// ÍCONES (importando como texto com ?raw)
+import buildingIcon from '../../public/icons/building.svg?raw';
+import homeIcon from '../../public/icons/home.svg?raw';
+import usersIcon from '../../public/icons/users.svg?raw';
+import scalesIcon from '../../public/icons/scales.svg?raw';
+import fallbackIcon from '../../public/icons/scales.svg?raw';
+
+const cases = featuredCases.cases;
+
+const icons: { [key: string]: string } = {
+  "Direito Empresarial": buildingIcon,
+  "Direito Imobiliário": homeIcon,
+  "Direito de Família": usersIcon,
+  "Direito Civil": scalesIcon,
+};
+---
+
+<section id="casos-de-destaque">
+  <div class="">
+    <div class="swiper cases-carousel relative overflow-visible">
+    <div class="swiper-wrapper">
+      {cases.map((caseItem) => {
+        const rawIconSvg = icons[caseItem.tag] || fallbackIcon;
+        const iconSvg = rawIconSvg
+          .replace(/width="[^"]*"/g, '')
+          .replace(/height="[^"]*"/g, '');
+
+        return (
+          <div class="swiper-slide !w-[320px] xl:!w-[456px] h-[386px]">
+            <div class="bg-white border border-gray-200 rounded-xl p-8 flex flex-col h-full text-left transition-shadow hover:shadow-lg">
+              <h3 class="text-[1.75rem] font-playfair text-gray-900 mb-3">{caseItem.title}</h3>
+              <p class="font-poppins text-base mb-6">{caseItem.description}</p>
+              <div class="flex items-center text-sm text-gray-500 mt-auto">
+                <div class="w-5 h-[18px]">
+                  <Fragment set:html={iconSvg} />
+                </div>
+                <span class="ml-2">{caseItem.tag}</span>
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+    <div class="swiper-pagination mt-6"></div>
+  </div>
+  </div>
+</section>
+
+<script >
+  import Swiper from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('DOMContentLoaded', () => {
+        new Swiper('.cases-carousel', {
+          modules: [Pagination],
+          slidesPerView: 1.1,
+          spaceBetween: 16,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            640: { slidesPerView: 2.2 },
+            1024: { slidesPerView: 3.2 },
+
+          },
+        });
+      });
+    }
+</script>
+<style>
+    :global(.swiper-wrapper) {
+      display: flex;
+      align-items: stretch !important; /* Faz todos os slides terem a mesma altura */
+    }
+
+    :global(.swiper-slide) {
+      flex-shrink: 0;
+      height: auto;
+      display: flex;           /* Faz o slide ocupar toda a altura */
+      align-items: stretch !important;
+    }
+
+    .swiper-slide > div {
+      display: flex;
+      flex-direction: column;
+      height: 100%;            /* Faz o conteúdo do card ocupar toda a altura */
+    }
+
+    :global(.swiper-pagination-bullet) {
+      width: 6px !important;
+      height: 6px !important;
+      background-color: #c5bdb8 !important;
+      opacity: 1 !important;
+      border-radius: 50% !important;
+    }
+
+    :global(.swiper-pagination-bullet-active) {
+      width: 20px !important;
+      height: 6px !important;
+      border-radius: 6px !important;
+      background-color: #5C5651 !important;
+    }
+
+    .swiper-pagination {
+      display: flex;
+      justify-content: center;
+    }
+
+    .swiper-slide svg {
+      width: 100%;
+      height: 100%;
+    }
+</style>

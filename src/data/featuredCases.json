@@ -1,0 +1,26 @@
+{
+  "title": "Casos de Destaque",
+  "description": "Conheça alguns dos casos em que atuei, respeitando a confidencialidade dos clientes, mas ilustrando minha abordagem resultados obtidos.",
+  "cases": [
+    {
+      "title": "Reestruturação Societária",
+      "description": "Conduzi uma complexa reestruturação societária para uma empresa familiar de médio porte, resolvendo conflitos internos e estabelecendo uma governança eficiente que permitiu o crescimento sustentável do negócio.",
+      "tag": "Direito Empresarial"
+    },
+    {
+      "title": "Regularização Imobiliária",
+      "description": "Conduzi um processo de regularização de um imóvel com pendências documentais de décadas, resolvendo questões complexas de registro e permitindo que o cliente finalmente obtivesse o título definitivo de propriedade.",
+      "tag": "Direito Imobiliário"
+    },
+    {
+      "title": "Acordo Familiar Complexo",
+      "description": "Mediei um acordo familiar envolvendo partilha de bens e guarda compartilhada, criando uma solução que atendeu aos interesses de todas as partes e priorizou o bem-estar dos filhos menores.",
+      "tag": "Direito de Família"
+    },
+    {
+      "title": "Resolução de Disputa Contratual",
+      "description": "Representei um cliente em uma disputa contratual complexa, utilizando técnicas de mediação para alcançar um acordo favorável, evitando um processo judicial longo e preservando a relação comercial entre as partes.",
+      "tag": "Direito Civil"
+    }
+  ]
+}
