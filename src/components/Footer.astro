@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logoFooter from '../../public/images/logo-footer.svg';
+---
+
+<footer class="bg-neutral-0 py-8 w-full">
+  <div class="max-w-[1472px] mx-auto px-4 lg:px-56 w-full">
+    <div
+      class="flex flex-col lg:flex-row w-full gap-10 items-start justify-between"
+    >
+      <Image
+        src={logoFooter}
+        alt="logo topo"
+        class="w-[200px]"
+        loading="eager"
+      />
+
+      <div
+        class="flex flex-col lg:flex-row gap-6 font-playfair text-neutral-700"
+      >
+        <a
+          href="/terms-and-policies"
+          class="hover:text-neutral-500 transition-colors"
+          >Política de Privacidade</a
+        >
+        <a
+          href="/terms-and-policies"
+          class="hover:text-neutral-500 transition-colors">Termos de Uso</a
+        >
+        <p class="text-sm">
+          © 2023 Marina Barroquelo Advocacia. Todos os direitos reservados.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

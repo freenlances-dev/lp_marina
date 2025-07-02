@@ -1,0 +1,46 @@
+---
+import logoHeader from '../../public/images/logo-header.svg';
+import Image from 'astro/components/Image.astro';
+import Button from './button.astro';
+import welcomeData from '../data/welcomeContent.json';
+---
+
+<header class="bg-neutral-700 py-8 w-full">
+  <div class="max-w-[1472px] mx-auto px-4 lg:px-56 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:items-center gap-4 lg:gap-0">
+      <div class="lg:justify-self-start">
+        <Image
+          src={logoHeader}
+          alt="logo topo"
+          class="w-[200px]"
+          loading="eager"
+        />
+      </div>
+
+      <nav class="lg:justify-self-center">
+        <div
+          class="flex flex-col lg:flex-row gap-4 lg:gap-6 font-playfair text-neutral-0"
+        >
+          <a href="/sobre" class="hover:text-gray-300 transition-colors"
+            >Sobre</a
+          >
+          <a href="/atuacao" class="hover:text-gray-300 transition-colors"
+            >Área de atuação</a
+          >
+          <a href="/experiencia" class="hover:text-gray-300 transition-colors"
+            >Experiência</a
+          >
+          <a href="/contato" class="hover:text-gray-300 transition-colors"
+            >Contato</a
+          >
+        </div>
+      </nav>
+      <div class="lg:justify-self-end">
+        <Button
+          text={welcomeData.button_text}
+          class="bg-neutral-100 text-neutral-800"
+        />
+      </div>
+    </div>
+  </div>
+</header>
