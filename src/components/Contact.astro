@@ -1,8 +1,8 @@
 ---
+import contactContent from '../data/contactContent.json';
 import '../styles/global.css';
 import Button from './button.astro';
 import ContactItem from './contactItem.astro';
-import contactContent from '../data/contactContent.json';
 ---
 
 <div class="bg-neutral-700 flex justify-center py-14 px-4 lg:py-24 lg:px-56">
@@ -26,7 +26,7 @@ import contactContent from '../data/contactContent.json';
       </div>
     </div>
 
-    <div class="bg-neutral-100 w-full flex items-center lg:w-1/2 rounded-lg">
+    <div class="bg-neutral-100 w-full flex items-center lg:w-1/2 rounded-lg h-fit">
       <div class="p-6 lg:py-14 lg:px-12">
         <h3
           class="font-playfair text-[28px] lg:text-[32px] font-semibold text-neutral-800 pb-8"
