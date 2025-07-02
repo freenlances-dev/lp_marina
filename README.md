@@ -5,7 +5,6 @@ Este projeto é uma landing page desenvolvida para o escritório Marina Adv, com
 ## Tecnologias Utilizadas
 
 - [Astro](https://astro.build/)
-- [Swiper.js](https://swiperjs.com/) (carrossel de casos)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
