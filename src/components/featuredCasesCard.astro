@@ -1,120 +1,179 @@
 ---
 import featuredCases from '../data/featuredCases.json';
-
-// ÍCONES (importando como texto com ?raw)
 import buildingIcon from '../../public/icons/building.svg?raw';
 import homeIcon from '../../public/icons/home.svg?raw';
 import usersIcon from '../../public/icons/users.svg?raw';
 import scalesIcon from '../../public/icons/scales.svg?raw';
 import fallbackIcon from '../../public/icons/scales.svg?raw';
 
-const cases = featuredCases.cases;
-
-const icons: { [key: string]: string } = {
+const icons: Record<string, string> = {
   "Direito Empresarial": buildingIcon,
   "Direito Imobiliário": homeIcon,
   "Direito de Família": usersIcon,
   "Direito Civil": scalesIcon,
 };
----
 
-<section id="casos-de-destaque">
-  <div class="">
-    <div class="swiper cases-carousel relative overflow-visible">
-    <div class="swiper-wrapper">
-      {cases.map((caseItem) => {
-        const rawIconSvg = icons[caseItem.tag] || fallbackIcon;
-        const iconSvg = rawIconSvg
+const iconColors: Record<string, string> = {
+  "Direito Empresarial": "#78706b", 
+  "Direito Imobiliário": "#78706b", 
+  "Direito de Família": "#78706b",
+  "Direito Civil": "#78706b",
+};
+
+const cases = featuredCases.cases;
+---
+<section class="w-full overflow-hidden">
+  <div >
+    <div
+      id="carousel"
+      class="flex space-x-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
+      style="cursor: grab;"
+    >
+      {cases.map((item) => {
+        const rawIcon = icons[item.tag] || fallbackIcon;
+        const iconColor = iconColors[item.tag] || "#78706b";
+        const iconClean = rawIcon
           .replace(/width="[^"]*"/g, '')
-          .replace(/height="[^"]*"/g, '');
+          .replace(/height="[^"]*"/g, '')
+          .replace(/stroke="[^"]*"/g, `stroke="${iconColor}"`);
 
         return (
-          <div class="swiper-slide !w-[320px] xl:!w-[456px] h-[386px]">
-            <div class="bg-white border border-gray-200 rounded-xl p-8 flex flex-col h-full text-left transition-shadow hover:shadow-lg">
-              <h3 class="text-[1.75rem] font-playfair text-gray-900 mb-3">{caseItem.title}</h3>
-              <p class="font-poppins text-base mb-6">{caseItem.description}</p>
-              <div class="flex items-center text-sm text-gray-500 mt-auto">
-                <div class="w-5 h-[18px]">
-                  <Fragment set:html={iconSvg} />
-                </div>
-                <span class="ml-2">{caseItem.tag}</span>
+          <div class="min-w-[298px] xl:min-w-[456px] bg-white border rounded-xl p-6 snap-start flex flex-col justify-between lg:h-[386px] xl:h-[290px]">
+            <div>
+              <h3 class="text-[1.75rem] font-playfair text-neutral-900 mb-2">{item.title}</h3>
+              <p class="font-poppins text-lg lg:text-base text-neutral-700">{item.description}</p>
+            </div>
+            <div class="flex items-center text-sm text-neutral-600 mt-4">
+              <div class="w-5 h-[18px]">
+                <Fragment set:html={iconClean} />
               </div>
+              <span class="ml-2 pt-px">{item.tag}</span>
             </div>
           </div>
-        )
+        );
       })}
     </div>
-    <div class="swiper-pagination mt-6"></div>
-  </div>
+
+    <div class="flex justify-center items-center gap-2 mt-4" id="indicators"></div>
   </div>
 </section>
 
-<script >
-  import Swiper from 'swiper';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    setupCarousel();
+  });
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('DOMContentLoaded', () => {
-        new Swiper('.cases-carousel', {
-          modules: [Pagination],
-          slidesPerView: 1.1,
-          spaceBetween: 16,
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-          },
-          breakpoints: {
-            640: { slidesPerView: 2.2 },
-            1024: { slidesPerView: 3.2 },
+  window.addEventListener('resize', function() {
+    setupCarousel();
+  });
 
-          },
+  function setupCarousel() {
+    const carousel = document.getElementById('carousel') ;
+    const indicatorsContainer = document.getElementById('indicators');
+    if (!carousel || !indicatorsContainer) return;
+
+    indicatorsContainer.innerHTML = '';
+
+    const slides = Array.from(carousel.children);
+    if (slides.length === 0) return;
+    
+    const firstSlide = slides[0] as HTMLElement;
+    const gap = 16; 
+    const slideWidth = firstSlide.offsetWidth + gap;
+    const carouselWidth = carousel.clientWidth;
+    const groupSize = Math.max(1, Math.floor(carouselWidth / slideWidth));
+    const totalGroups = Math.ceil(slides.length / groupSize);
+
+    for (let i = 0; i < totalGroups; i++) {
+      const indicator = document.createElement('button');
+      indicator.className = i === 0 
+        ? 'w-6 h-2 rounded-full bg-[#5C5651] transition-all duration-300' 
+        : 'size-2 rounded-full bg-[#c5bdb8] transition-all duration-300';
+      indicator.setAttribute('aria-label', `Grupo ${i+1}`);
+      
+      indicator.addEventListener('click', function() {
+        carousel.scrollTo({
+          left: i * slideWidth * groupSize,
+          behavior: 'smooth'
         });
+        updateActiveIndicator(i);
+      });
+      
+      indicatorsContainer.appendChild(indicator);
+    }
+    
+    carousel.addEventListener('scroll', function() {
+      const scrollPos = carousel.scrollLeft;
+      const groupIndex = Math.round(scrollPos / (slideWidth * groupSize));
+      updateActiveIndicator(groupIndex);
+    });
+    
+    function updateActiveIndicator(activeIdx: number) {
+      const indicators = indicatorsContainer?.querySelectorAll('button');
+      indicators?.forEach((btn, idx) => {
+        btn.className = idx === activeIdx
+          ? 'w-6 h-2 rounded-full bg-[#5C5651] transition-all duration-300'
+          : 'size-2 rounded-full bg-[#c5bdb8] transition-all duration-300';
       });
     }
+    
+    setupDragBehavior(carousel);
+  }
+  
+  function setupDragBehavior(element: HTMLElement) {
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    
+    element.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      element.style.cursor = 'grabbing';
+      startX = e.pageX;
+      startScrollLeft = element.scrollLeft;
+      e.preventDefault();
+    });
+    
+    element.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      const x = e.pageX;
+      const walk = (startX - x) * 1.5;
+      element.scrollLeft = startScrollLeft + walk;
+    });
+    
+    element.addEventListener('mouseup', function() {
+      isDragging = false;
+      element.style.cursor = 'grab';
+    });
+    
+    element.addEventListener('mouseleave', function() {
+      isDragging = false;
+      element.style.cursor = 'grab';
+    });
+  }
 </script>
+
 <style>
-    :global(.swiper-wrapper) {
-      display: flex;
-      align-items: stretch !important; /* Faz todos os slides terem a mesma altura */
-    }
+  #carousel::-webkit-scrollbar {
+    display: none;
+  }
+  #carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 100%;
+    touch-action: pan-x;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+  }
 
-    :global(.swiper-slide) {
-      flex-shrink: 0;
-      height: auto;
-      display: flex;           /* Faz o slide ocupar toda a altura */
-      align-items: stretch !important;
-    }
-
-    .swiper-slide > div {
-      display: flex;
-      flex-direction: column;
-      height: 100%;            /* Faz o conteúdo do card ocupar toda a altura */
-    }
-
-    :global(.swiper-pagination-bullet) {
-      width: 6px !important;
-      height: 6px !important;
-      background-color: #c5bdb8 !important;
-      opacity: 1 !important;
-      border-radius: 50% !important;
-    }
-
-    :global(.swiper-pagination-bullet-active) {
-      width: 20px !important;
-      height: 6px !important;
-      border-radius: 6px !important;
-      background-color: #5C5651 !important;
-    }
-
-    .swiper-pagination {
-      display: flex;
-      justify-content: center;
-    }
-
-    .swiper-slide svg {
-      width: 100%;
-      height: 100%;
-    }
+  .fill-neutral-700 svg {
+    fill: #525252; /* Código hexadecimal para neutral-700 */
+  }
+  
+  .fill-neutral-700 svg path,
+  .fill-neutral-700 svg rect,
+  .fill-neutral-700 svg circle,
+  .fill-neutral-700 svg polygon {
+    fill: #525252;
+  }
 </style>
