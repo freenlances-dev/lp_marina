@@ -1,0 +1,44 @@
+---
+import '../styles/global.css';
+import logoHeader from '../../public/images/logo-light.svg';
+import Image from 'astro/components/Image.astro';
+import Button from './button.astro';
+import welcomeData from '../data/welcomeContent.json';
+
+interface Props {
+  background?: boolean;
+}
+
+const { background = true } = Astro.props;
+---
+
+<div class={background ? 'bg-neutral-700' : 'bg-transparent'}>
+  <div class="max-w-[1420px] mx-auto px-4 py-8 lg:py-14 lg:px-24">
+    <div class="flex flex-col items-center lg:flex-row justify-between gap-8">
+      <div>
+        <a href="/">
+          <Image
+            src={logoHeader}
+            alt="logo topo"
+            class="w-[200px]"
+            loading="eager"
+          /></a
+        >
+      </div>
+      <div
+        class="flex flex-col lg:flex-row font-playfair text-base text-neutral-100 gap-8"
+      >
+        <a href="/sobre" class='hover:text-gray-300"'>Sobre</a>
+        <a href="/atuacao" class="hover:text-gray-300">Área de atuação</a>
+        <a href="/experiencia" class='hover:text-gray-300"'>Experiência</a>
+        <a href="/contato" class="hover:text-gray-300">Contato</a>
+      </div>
+      <div>
+        <Button
+          text={welcomeData.button_text}
+          class="bg-neutral-100 text-neutral-800"
+        />
+      </div>
+    </div>
+  </div>
+</div>
