@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import policieContent from '../data/policiePrivacyContent.json';
+---
+
+<Layout>
+  <Header />
+  <main class="bg-neutral-0">
+    <div class="max-w-[1420px] mx-auto px-6 py-14 lg:py-24">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-12">
+          <h1 class="font-playfair text-[28px] lg:text-[32px] text-neutral-700">
+            {policieContent.title}
+          </h1>
+          <p class="text-neutral-800 font-poppins">
+            Última atualização: {policieContent.lastUpdate}
+          </p>
+        </div>
+
+        <div class="prose prose-lg space-y-8">
+          <p class="text-lg font-poppins text-neutral-700">
+            {policieContent.introduction}
+          </p>
+
+          {
+            policieContent.sections.map((section) => (
+              <section>
+                <h2 class="font-playfair text-2xl text-neutral-800 mb-4">
+                  {section.id}. {section.title}
+                </h2>
+                <p class="font-poppins text-neutral-700 leading-relaxed">
+                  {section.content}
+                  {section.email && (
+                    <a
+                      href={`mailto:${section.email}`}
+                      class="text-brown-dark hover:underline ml-1"
+                    >
+                      {section.email}
+                    </a>
+                  )}
+                </p>
+              </section>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </main>
+  <Contact />
+  <Footer />
+</Layout>

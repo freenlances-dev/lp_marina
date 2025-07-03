@@ -3,24 +3,37 @@ import contactContent from '../data/contactContent.json';
 import '../styles/global.css';
 import Button from './button.astro';
 import ContactItem from './contactItem.astro';
+import Image from 'astro/components/Image.astro';
+import contactImage from '../../public/images/img-bg-contact.svg';
 ---
 
-<section class="bg-neutral-700 w-full">
-  <div class="max-w-[1420px] px-6 py-14 lg:py-24">
-    <div class="flex flex-col lg:flex-row gap-8">
-      <div class="w-full lg:w-1/2 leading-tight">
-        <div class="pb-8">
+<section class="bg-neutral-700 w-full relative overflow-hidden">
+  <div class="absolute top-0 right-0 z-0 hidden lg:block">
+    <Image
+      src={contactImage}
+      alt="Decoração contato"
+      class="opacity-40"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="max-w-[1420px] mx-auto px-6 py-14 lg:py-24">
+    <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 lg:items-stretch">
+      <div class="w-full lg:w-1/2 flex flex-col">
+        <div class="pb-10">
           <p
             class="font-poppins font-medium text-sm text-neutral-400 uppercase"
           >
             Contato
           </p>
-          <h2 class="font-playfair text-[32px] lg:text-[42px] text-neutral-100">
+          <h2
+            class="font-playfair text-[32px] lg:text-[42px] text-neutral-100 leading-tight"
+          >
             {contactContent.title}
           </h2>
         </div>
 
-        <div class="space-y-4">
+        <div class="space-y-6 flex-grow flex flex-col justify-center">
           {
             contactContent.contacts.map((contact) => (
               <ContactItem
@@ -33,32 +46,39 @@ import ContactItem from './contactItem.astro';
       </div>
 
       <div class="w-full lg:w-1/2">
-        <div class="bg-neutral-100 rounded-lg p-6 lg:p-12 space-y-[42px]">
-          <h3
-            class="font-playfair text-[28px] lg:text-[32px] font-semibold text-neutral-800"
-          >
-            {contactContent.titleCard}
-          </h3>
-
-          <form class="w-full">
-            <label
-              class="font-poppins text-sm font-medium text-neutral-700"
-              for="fullName"
+        <div class="bg-neutral-100 rounded-lg p-6 lg:p-12 h-full flex flex-col">
+          <div>
+            <h3
+              class="font-playfair text-[28px] lg:text-[32px] font-semibold text-neutral-800 mb-8"
             >
-              Nome Completo
-            </label>
-            <input
-              id="fullName"
-              name="fullName"
-              type="text"
-              class="w-full border-b-1 border-neutral-700 py-2"
-              required
-            />
-          </form>
-          <Button
-            text={contactContent.textButton}
-            class="bg-brown-dark text-neutral-100 w-full justify-center hover:bg-neutral-700 transition-colors duration-200"
-          />
+              {contactContent.titleCard}
+            </h3>
+          </div>
+
+          <div>
+            <form class="w-full mb-4">
+              <label
+                class="font-poppins text-sm font-medium text-neutral-700 block"
+                for="fullName"
+              >
+                Nome Completo
+              </label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                class="w-full border-b-2 border-neutral-700 py-3 bg-transparent focus:outline-none focus:border-brown-dark transition-colors"
+                required
+              />
+            </form>
+
+            <div class="mt-8">
+              <Button
+                text={contactContent.textButton}
+                class="bg-brown-dark text-neutral-100 w-full justify-center hover:bg-neutral-700 transition-colors duration-200"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
