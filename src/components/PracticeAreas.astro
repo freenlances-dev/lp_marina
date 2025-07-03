@@ -1,38 +1,67 @@
 ---
-import building from "../../public/icons/building.svg";
-import PracticeAreaCard from "./practiceAreaCard.astro";
-import practicesAreasContent from "../data/practicesAreasContent.json";
 import Image from "astro/components/Image.astro";
+import building from "../../public/icons/building.svg";
 import imgPracticeAreas from "../../public/images/img-pratices-area.png";
+import practicesAreasContent from "../data/practicesAreasContent.json";
 import Button from "./button.astro";
+import PracticeAreaCard from "./practiceAreaCard.astro";
 ---
 
-<article class="bg-yellow-light pt-[96px] w-full mx-auto">
+<article id="practice-areas" class="bg-yellow-light pt-[96px] w-full mx-auto">
   <div class="max-w-[1420px] mx-auto w-full px-6 pt-6">
-    <div class="flex flex-col items-center justify-center gap-6 mb-4 lg:mb-[96px] w-full">
-      <h1 class="w-full font-medium text-[2rem] lg:text-5xl font-playfair leading-[4px] lg:leading-6 text-start lg:text-center">Área de Atuação</h1>
-      <p class="font-poppins text-base text-start lg:text-center max-w-[916px]">Especializada em diversas áreas do Direito, ofereço soluções jurídicas personalizadas para atender às necessidades específicas de cada cliente.</p>
+    <div
+      class="flex flex-col items-center justify-center gap-6 mb-4 lg:mb-[96px] w-full"
+    >
+      <h1
+        class="w-full font-medium text-[2rem] lg:text-5xl font-playfair leading-[4px] lg:leading-6 text-start lg:text-center"
+      >
+        Área de Atuação
+      </h1>
+      <p class="font-poppins text-base text-start lg:text-center max-w-[916px]">
+        Especializada em diversas áreas do Direito, ofereço soluções jurídicas
+        personalizadas para atender às necessidades específicas de cada cliente.
+      </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-      {practicesAreasContent.map((area) => (
-        <PracticeAreaCard icon={area.icon || building} title={area.title} description={area.description} />
-      ))}
+      {
+        practicesAreasContent.map((area) => (
+          <PracticeAreaCard
+            icon={area.icon || building}
+            title={area.title}
+            description={area.description}
+          />
+        ))
+      }
     </div>
 
-    <div class="relative mt-[96px] hidden lg:block rounded-t-2xl overflow-hidden bg-neutral-900 text-white">
-      <Image src={imgPracticeAreas} alt="Imagem representativa" class="absolute inset-0 w-full h-full object-cover" />
+    <div
+      class="relative mt-[96px] hidden lg:block rounded-t-2xl overflow-hidden bg-neutral-900 text-white"
+    >
+      <Image
+        src={imgPracticeAreas}
+        alt="Imagem representativa"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
 
-      <div class="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-8 px-[96px] py-12">
+      <div
+        class="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-8 px-[96px] py-12"
+      >
         <div class="max-w-2xl">
-          <h2 class="text-4xl font-bold font-playfair mb-4">Advocacia Estratégica e Personalizada</h2>
-          <p class="text-lg font-poppins">Comprometida com a excelência jurídica e a defesa dos seus direitos com humanidade, ética e resultados.</p>
+          <h2 class="text-4xl font-bold font-playfair mb-4">
+            Advocacia Estratégica e Personalizada
+          </h2>
+          <p class="text-lg font-poppins">
+            Comprometida com a excelência jurídica e a defesa dos seus direitos
+            com humanidade, ética e resultados.
+          </p>
         </div>
 
         <Button
-          text='Agendar uma Consulta'
+          text="Agendar uma Consulta"
           class="bg-neutral-100 text-neutral-800"
-      />
+          href={`https://wa.me/5518997845088`}
+        />
       </div>
     </div>
   </div>

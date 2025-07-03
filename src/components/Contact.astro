@@ -1,11 +1,14 @@
 ---
-import contactContent from '../data/contactContent.json';
-import '../styles/global.css';
-import Button from './button.astro';
-import ContactItem from './contactItem.astro';
+import contactContent from "../data/contactContent.json";
+import "../styles/global.css";
+import Button from "./button.astro";
+import ContactItem from "./contactItem.astro";
 ---
 
-<div class="bg-neutral-700 flex justify-center py-14 px-4 lg:py-24 lg:px-56">
+<div
+  id="contact"
+  class="bg-neutral-700 flex justify-center py-14 px-4 lg:py-24 lg:px-56"
+>
   <div class="w-full max-w-[1472px] flex flex-col lg:flex-row gap-8 lg:gap-16">
     <div class="w-full lg:w-1/2 leading-tight">
       <p class="font-poppins text-sm text-neutral-600 uppercase">Contato</p>
@@ -26,14 +29,16 @@ import ContactItem from './contactItem.astro';
       </div>
     </div>
 
-    <div class="bg-neutral-100 w-full flex items-center lg:w-1/2 rounded-lg h-fit">
+    <div
+      class="bg-neutral-100 w-full flex items-center lg:w-1/2 rounded-lg h-fit"
+    >
       <div class="p-6 lg:py-14 lg:px-12">
         <h3
           class="font-playfair text-[28px] lg:text-[32px] font-semibold text-neutral-800 pb-8"
         >
           {contactContent.titleCard}
         </h3>
-        <form class="flex flex-col justify-center">
+        <form class="flex flex-col justify-center" id="contactForm">
           <div class="relative">
             <label class="font-poppins text-neutral-700" for="fullName">
               Nome Completo
@@ -50,6 +55,7 @@ import ContactItem from './contactItem.astro';
             <Button
               text={contactContent.textButton}
               class="bg-brown-dark text-neutral-100 flex w-full justify-center"
+              type="submit"
             />
           </div>
         </form>
@@ -57,3 +63,27 @@ import ContactItem from './contactItem.astro';
     </div>
   </div>
 </div>
+
+<script>
+  document
+    .getElementById("contactForm")
+    ?.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const fullNameInput = document.getElementById(
+        "fullName"
+      ) as HTMLInputElement | null;
+      const fullName = fullNameInput?.value || "";
+
+      if (!fullName) return;
+
+      const phone = "5518997845088";
+      const message = `Olá, sou ${fullName} e gostaria de agendar uma consulta.`;
+
+      const encodedMessage = encodeURIComponent(message);
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+
+      window.open(whatsappUrl, "_blank");
+    });
+</script>
