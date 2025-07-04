@@ -1,0 +1,38 @@
+{
+  "title": "Termos de Uso",
+  "lastUpdate": "Janeiro de 2025",
+  "introduction": "Ao acessar e utilizar esta página, você concorda com os seguintes termos e condições:",
+  "sections": [
+    {
+      "id": 1,
+      "title": "Objetivo da Página",
+      "content": "Esta página tem como objetivo facilitar o contato entre usuários e a Dra. Marina, advogada atuante nas áreas de Direito do Consumidor e Direito Civil, por meio do envio de mensagem personalizada via WhatsApp."
+    },
+    {
+      "id": 2,
+      "title": "Uso do Formulário",
+      "content": "O usuário compromete-se a fornecer informações verdadeiras ao preencher o formulário de contato."
+    },
+    {
+      "id": 3,
+      "title": "Responsabilidade",
+      "content": "A página não se responsabiliza por eventuais indisponibilidades do WhatsApp ou por problemas técnicos alheios ao seu controle."
+    },
+    {
+      "id": 4,
+      "title": "Propriedade Intelectual",
+      "content": "Todo o conteúdo desta página, incluindo textos, imagens e marca, pertence à Dra. Marina e não pode ser reproduzido sem autorização prévia."
+    },
+    {
+      "id": 5,
+      "title": "Alterações nos Termos",
+      "content": "Estes Termos de Uso podem ser alterados a qualquer momento, sem aviso prévio. Recomendamos a leitura periódica."
+    },
+    {
+      "id": 6,
+      "title": "Contato",
+      "content": "Em caso de dúvidas, entre em contato pelo e-mail:",
+      "email": "ma-bviana@hotmail.com"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "title": "Política de Privacidade",
+  "lastUpdate": "Janeiro de 2025",
+  "introduction": "Esta Política de Privacidade tem como objetivo informar como os dados pessoais dos usuários são coletados, utilizados e protegidos ao utilizar esta página.",
+  "sections": [
+    {
+      "id": 1,
+      "title": "Coleta de Dados",
+      "content": "Coletamos apenas o nome completo informado voluntariamente pelo usuário no formulário da página para facilitar o atendimento via WhatsApp."
+    },
+    {
+      "title": "Uso dos Dados",
+      "content": "O nome fornecido será utilizado exclusivamente para personalizar o atendimento inicial no WhatsApp da Dra. Marina, não sendo armazenado em banco de dados ou utilizado para outros fins."
+    },
+    {
+      "id": 3,
+      "title": "Compartilhamento de Dados",
+      "content": "Os dados informados serão compartilhados apenas com a Dra. Marina, por meio da mensagem automática encaminhada ao WhatsApp. Não compartilhamos seus dados com terceiros."
+    },
+    {
+      "id": 4,
+      "title": "Segurança dos Dados",
+      "content": "Adotamos medidas razoáveis para proteger seus dados durante o processo de encaminhamento para o WhatsApp. No entanto, após o envio da mensagem, a comunicação estará sujeita à política de privacidade do WhatsApp."
+    },
+    {
+      "id": 5,
+      "title": "Direitos do Usuário",
+      "content": "Você pode, a qualquer momento, solicitar esclarecimentos sobre o uso dos seus dados pelo e-mail:",
+      "email": "ma-bviana@hotmail.com"
+    },
+    {
+      "id": 6,
+      "title": "Alterações nesta Política",
+      "content": "Esta Política de Privacidade pode ser atualizada periodicamente. Recomendamos a revisão regular deste documento."
+    }
+  ]
+}
