@@ -1,9 +1,9 @@
 ---
-import '../styles/global.css';
-import logoHeader from '../../public/images/logo-light.svg';
-import Image from 'astro/components/Image.astro';
-import Button from './button.astro';
-import welcomeData from '../data/welcomeContent.json';
+import Image from "astro/components/Image.astro";
+import logoHeader from "../../public/images/logo-light.svg";
+import welcomeData from "../data/welcomeContent.json";
+import "../styles/global.css";
+import Button from "./button.astro";
 
 interface Props {
   background?: boolean;
@@ -12,9 +12,9 @@ interface Props {
 const { background = true } = Astro.props;
 ---
 
-<div class={background ? 'bg-neutral-700' : 'bg-transparent'}>
-  <div class="max-w-[1420px] mx-auto px-4 py-8 lg:py-14 lg:px-24">
-    <div class="flex flex-col items-center lg:flex-row justify-between gap-8">
+<div class={background ? "bg-neutral-700" : "bg-transparent"}>
+  <div class="max-w-[1420px] mx-auto px-4 py-8 lg:px-24">
+    <div class="flex items-center justify-between">
       <div>
         <a href="/">
           <Image
@@ -22,23 +22,142 @@ const { background = true } = Astro.props;
             alt="logo topo"
             class="w-[200px]"
             loading="eager"
-          /></a
-        >
+          />
+        </a>
       </div>
+
       <div
-        class="flex flex-col lg:flex-row font-playfair text-base text-neutral-100 gap-8"
+        id="nav-links"
+        class="hidden lg:flex flex-row font-playfair text-base text-neutral-100 gap-8"
       >
-        <a href="/sobre" class='hover:text-gray-300"'>Sobre</a>
-        <a href="/atuacao" class="hover:text-gray-300">Área de atuação</a>
-        <a href="/experiencia" class='hover:text-gray-300"'>Experiência</a>
-        <a href="/contato" class="hover:text-gray-300">Contato</a>
+        <a href="#about" class="hover:text-neutral-300">Sobre</a>
+        <a href="#practice-areas" class="hover:text-neutral-300"
+          >Área de atuação</a
+        >
+        <a href="#featured-cases" class="hover:text-neutral-300">Experiência</a>
+        <a href="#contact" class="hover:text-neutral-300">Contato</a>
       </div>
-      <div>
+
+      <div class="hidden lg:block">
         <Button
           text={welcomeData.button_text}
           class="bg-neutral-100 text-neutral-800"
+          href={`https://wa.me/5518997845088`}
         />
+      </div>
+
+      <button id="menu-toggle" class="lg:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-8 h-8 text-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 9h16.5m-16.5 6.75h16.5"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-neutral-800 bg-opacity-95 z-50 hidden flex-col"
+  >
+    <div
+      class="max-w-[1420px] mx-auto px-4 py-8 flex justify-between items-center"
+    >
+      <div>
+        <Image
+          src={logoHeader}
+          alt="logo topo"
+          class="w-[200px]"
+          loading="eager"
+        />
+      </div>
+      <button id="close-menu" class="ml-4">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-4 text-white"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col lg:items-center justify-center h-full pb-32">
+      <div class="flex flex-col gap-8 items-center text-center">
+        <a href="#about" class="text-neutral-100 text-xl hover:text-neutral-300"
+          >Sobre</a
+        >
+        <a
+          href="#practice-areas"
+          class="text-neutral-100 text-xl hover:text-neutral-300"
+          >Área de atuação</a
+        >
+        <a
+          href="#featured-cases"
+          class="text-neutral-100 text-xl hover:text-neutral-300">Experiência</a
+        >
+        <a
+          href="#contact"
+          class="text-neutral-100 text-xl hover:text-neutral-300">Contato</a
+        >
+        <div class="mt-8">
+          <Button
+            text={welcomeData.button_text}
+            class="bg-neutral-100 text-neutral-800"
+            href={`https://wa.me/5518997845088`}
+          />
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const closeMenu = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const mobileLinks = document.querySelectorAll("#mobile-menu a");
+
+    if (menuToggle && closeMenu && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        document.body.style.overflow = "";
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenu.classList.remove("flex");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
