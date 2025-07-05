@@ -1,9 +1,19 @@
 ---
-const { text, class: className = '' } = Astro.props;
+interface Props {
+  text?: string;
+  class?: string;
+  href?: string;
+  type?: "button" | "submit";
+}
+
+const { text = "", class: className = "", href, type = "button" } = Astro.props;
 ---
 
 <button
   class={`rounded-xl font-playfair font-bold px-6 py-3 flex items-center h-12 text-base w-fit cursor-pointer hover:opacity-80 ${className}`}
+  onclick={href ? `window.open('${href}', '_blank')` : undefined}
+  type={type}
+  aria-label={text}
 >
   {text}
 </button>

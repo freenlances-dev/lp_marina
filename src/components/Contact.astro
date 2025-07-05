@@ -1,13 +1,13 @@
 ---
-import contactContent from '../data/contactContent.json';
-import '../styles/global.css';
-import Button from './button.astro';
-import ContactItem from './contactItem.astro';
-import Image from 'astro/components/Image.astro';
-import contactImage from '../../public/images/img-bg-contact.svg';
+import contactContent from "../data/contactContent.json";
+import "../styles/global.css";
+import Button from "./button.astro";
+import ContactItem from "./contactItem.astro";
+import Image from "astro/components/Image.astro";
+import contactImage from "../../public/images/img-bg-contact.svg";
 ---
 
-<section class="bg-neutral-700 w-full relative overflow-hidden">
+<section class="bg-neutral-700 w-full relative overflow-hidden" id="contact">
   <div class="absolute top-0 right-0 z-0 hidden lg:block">
     <Image
       src={contactImage}
@@ -84,3 +84,28 @@ import contactImage from '../../public/images/img-bg-contact.svg';
     </div>
   </div>
 </section>
+
+<script>
+  document
+    .getElementById("contactForm")
+    ?.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const fullNameInput = document.getElementById(
+        "fullName"
+      ) as HTMLInputElement | null;
+      const fullName = fullNameInput?.value || "";
+
+      if (!fullName) return;
+
+      const phone = "5518997845088";
+      const message = `Olá, sou ${fullName} e gostaria de agendar uma consulta.`;
+
+      const encodedMessage = encodeURIComponent(message);
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+
+      window.open(whatsappUrl, "_blank");
+    });
+</script>
+======= >>>>>>> f88f7e97139e8b5033c871df7166243535dd1c0d
