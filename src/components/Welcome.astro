@@ -1,36 +1,15 @@
 ---
-import { Image } from "astro:assets";
-import logoHeader from "../../public/images/logo-header.svg";
 import welcomeData from "../data/welcomeContent.json";
 import "../styles/global.css";
 import Button from "./button.astro";
+import Header from "./Header.astro";
 ---
 
 <div
   id="welcome"
   class="bg-[url('./public/images/bg.png')] w-full h-[900px] bg-no-repeat bg-cover bg-center overflow-hidden"
 >
-  <div
-    id="header"
-    class="max-w-[1500px] mx-auto pt-6 flex justify-between items-center"
-  >
-    <Image src={logoHeader} alt="logo topo" class="w-[200px]" loading="eager" />
-    <div id="nav-links" class="flex space-x-4 font-playfair items-center">
-      <a href="#about" class="text-white hover:text-gray-300">Sobre</a>
-      <a href="#practice-areas" class="text-white hover:text-gray-300"
-        >Área de atuação</a
-      >
-      <a href="#featured-cases" class="text-white hover:text-gray-300"
-        >Experiência</a
-      >
-      <a href="#contact" class="text-white hover:text-gray-300">Contato</a>
-    </div>
-    <Button
-      text={welcomeData.button_text}
-      class="bg-neutral-100 text-neutral-800"
-      href={`https://wa.me/5518997845088`}
-    />
-  </div>
+  <Header background={false} />
   <div
     id="hero-content"
     class="max-w-[1280px] mx-auto pt-24 px-4 md:px-0 text-white flex flex-col justify-center h-[calc(900px-250px)]"
@@ -51,10 +30,9 @@ import Button from "./button.astro";
       href={`https://wa.me/5518997845088`}
     />
   </div>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </div>
-
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>

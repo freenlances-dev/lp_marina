@@ -1,10 +1,10 @@
 ---
 import contactContent from "../data/contactContent.json";
 import "../styles/global.css";
-import Button from "./button.astro";
 import ContactItem from "./contactItem.astro";
 import Image from "astro/components/Image.astro";
 import contactImage from "../../public/images/img-bg-contact.svg";
+import Button from "./button.astro";
 ---
 
 <section class="bg-neutral-700 w-full relative overflow-hidden" id="contact">
@@ -56,7 +56,7 @@ import contactImage from "../../public/images/img-bg-contact.svg";
           </div>
 
           <div>
-            <form class="w-full mb-4">
+            <form class="w-full" id="contactForm">
               <label
                 class="font-poppins text-sm font-medium text-neutral-700 block"
                 for="fullName"
@@ -70,14 +70,15 @@ import contactImage from "../../public/images/img-bg-contact.svg";
                 class="w-full border-b-2 border-neutral-700 py-3 bg-transparent focus:outline-none focus:border-brown-dark transition-colors"
                 required
               />
-            </form>
 
-            <div class="mt-8">
-              <Button
-                text={contactContent.textButton}
-                class="bg-brown-dark text-neutral-100 w-full justify-center hover:bg-neutral-700 transition-colors duration-200"
-              />
-            </div>
+              <div class="mt-8">
+                <Button
+                  text={contactContent.textButton}
+                  class="bg-brown-dark text-neutral-100 w-full justify-center hover:bg-neutral-700 transition-colors duration-200"
+                  type="submit"
+                />
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -100,12 +101,12 @@ import contactImage from "../../public/images/img-bg-contact.svg";
 
       const phone = "5518997845088";
       const message = `Olá, sou ${fullName} e gostaria de agendar uma consulta.`;
-
       const encodedMessage = encodeURIComponent(message);
 
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+      const url = navigator.userAgent.match(/Android|iPhone/i)
+        ? `whatsapp://send?phone=${phone}&text=${encodedMessage}`
+        : `https://web.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
 
-      window.open(whatsappUrl, "_blank");
+      window.open(url, "_blank");
     });
 </script>
-======= >>>>>>> f88f7e97139e8b5033c871df7166243535dd1c0d
