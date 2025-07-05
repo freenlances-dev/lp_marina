@@ -1,7 +1,6 @@
 ---
 import Image from "astro/components/Image.astro";
 import logoHeader from "../../public/images/logo-light.svg";
-import menuIcon from "../../public/icons/menu.svg";
 import welcomeData from "../data/welcomeContent.json";
 import "../styles/global.css";
 import Button from "./button.astro";
@@ -27,7 +26,6 @@ const { background = true } = Astro.props;
         </a>
       </div>
 
-      <!-- Menu desktop -->
       <div
         id="nav-links"
         class="hidden lg:flex flex-row font-playfair text-base text-neutral-100 gap-8"
@@ -48,7 +46,6 @@ const { background = true } = Astro.props;
         />
       </div>
 
-      <!-- Botão hamburger mobile -->
       <button id="menu-toggle" class="lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +64,6 @@ const { background = true } = Astro.props;
     </div>
   </div>
 
-  <!-- Menu mobile (inicialmente oculto) -->
   <div
     id="mobile-menu"
     class="fixed inset-0 bg-neutral-800 bg-opacity-95 z-50 hidden flex-col"
@@ -137,21 +133,18 @@ const { background = true } = Astro.props;
     const mobileLinks = document.querySelectorAll("#mobile-menu a");
 
     if (menuToggle && closeMenu && mobileMenu) {
-      // Abrir menu
       menuToggle.addEventListener("click", () => {
         mobileMenu.classList.remove("hidden");
         mobileMenu.classList.add("flex");
-        document.body.style.overflow = "hidden"; // Previne scroll
+        document.body.style.overflow = "hidden";
       });
 
-      // Fechar menu
       closeMenu.addEventListener("click", () => {
         mobileMenu.classList.add("hidden");
         mobileMenu.classList.remove("flex");
-        document.body.style.overflow = ""; // Restaura scroll
+        document.body.style.overflow = "";
       });
 
-      // Fechar menu ao clicar nos links
       mobileLinks.forEach((link) => {
         link.addEventListener("click", () => {
           mobileMenu.classList.add("hidden");
