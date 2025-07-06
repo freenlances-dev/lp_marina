@@ -1,38 +1,66 @@
 ---
+import { Image } from "astro:assets";
+import backgroundImage from "../../public/images/bg-welcome.png";
+import gridDetails from "../../public/images/bg-grid.svg";
+import imgProfile from "../../public/images/img-welcome.png";
 import welcomeData from "../data/welcomeContent.json";
 import "../styles/global.css";
 import Button from "./button.astro";
 import Header from "./Header.astro";
 ---
 
-<div
+<section
   id="welcome"
-  class="bg-[url('./public/images/bg.png')] w-full h-[900px] bg-no-repeat bg-cover bg-center overflow-hidden"
+  class="relative w-full bg-cover bg-center bg-no-repeat overflow-hidden"
+  style={`background-image: url(${backgroundImage.src})`}
 >
-  <Header background={false} />
+  <!-- Overlay escura -->
+  <div class="absolute inset-0 bg-neutral-800/75 backdrop-blur-sm z-0"></div>
+
+  <!-- Grid visual -->
   <div
-    id="hero-content"
-    class="max-w-[1280px] mx-auto pt-24 px-4 md:px-0 text-white flex flex-col justify-center h-[calc(900px-250px)]"
+    class="absolute inset-0 bg-repeat opacity-30 mix-blend-overlay z-0"
+    style={`background-image: url(${gridDetails.src})`}
   >
-    <h1
-      class="text-4xl md:text-6xl font-bold font-playfair mb-4 max-w-2xl leading-tight font-medium"
-    >
-      {welcomeData.title}
-    </h1>
-    <p
-      class="text-lg md:text-xl font-playfair mb-8 max-w-xl font-poppins text-4"
-    >
-      {welcomeData.description}
-    </p>
-    <Button
-      text={welcomeData.button_text}
-      class="bg-neutral-100 text-neutral-800"
-      href={`https://wa.me/5518997845088`}
-    />
   </div>
+
+  <div class="relative z-10 flex flex-col">
+    <Header background={false} />
+
+    <div
+      class="relative flex flex-col items-center text-neutral-0 px-8 lg:px-20 md:flex-row md:justify-between max-w-[1420px] mx-auto w-full"
+    >
+      <!-- Textos e botão -->
+      <div
+        class="flex flex-col items-center text-center gap-6 z-10 mt-6 md:mb-40 md:items-start md:text-left md:w-1/2 order-1"
+      >
+        <h1 class="text-[2rem] md:text-6xl font-playfair leading-none">
+          {welcomeData.title}
+        </h1>
+        <p class="text-lg md:text-2xl max-w-xl font-poppins hidden md:block">
+          {welcomeData.description}
+        </p>
+        <Button
+          text={welcomeData.button_text}
+          class="bg-neutral-100 text-neutral-800"
+          href={`https://wa.me/5518997845088`}
+        />
+      </div>
+
+      <!-- Imagem Unificada -->
+      <div class="md:w-1/2 w-full order-2 flex justify-center">
+        <Image
+          src={imgProfile}
+          alt="Imagem de perfil"
+          class="max-w-full h-auto"
+        />
+      </div>
+    </div>
+  </div>
+
   <style>
     html {
       scroll-behavior: smooth;
     }
   </style>
-</div>
+</section>
