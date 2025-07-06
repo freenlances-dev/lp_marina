@@ -7,7 +7,8 @@ import Header from "./Header.astro";
 
 <div
   id="welcome"
-  class="bg-[url('./public/images/bg.png')] w-full h-[900px] bg-no-repeat bg-cover bg-center overflow-hidden"
+  style="background-image: url('/images/bg.png')"
+  class="w-full h-[900px] bg-no-repeat bg-cover bg-center overflow-hidden"
 >
   <Header background={false} />
   <div
@@ -33,9 +34,6 @@ import Header from "./Header.astro";
   <style>
     html {
       scroll-behavior: smooth;
-    }
-    .bg-image {
-      background-image: var(--bg-image);
     }
   </style>
 </div>
