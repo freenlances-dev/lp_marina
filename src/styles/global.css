@@ -17,3 +17,51 @@
   --color-brown-dark: #3c3835;
   --color-yellow-light: #faf9f6;
 }
+
+/* Regras globais */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Correção para modo paisagem em dispositivos móveis */
+@media (orientation: landscape) and (max-height: 600px) {
+  section {
+    width: 100vw;
+    min-height: 100vh;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .max-w-\[1420px\] {
+    max-width: 100%;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #welcome {
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  /* Ajustes específicos para imagem e layout em modo paisagem */
+  #welcome img {
+    max-height: 80vh;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* Garante que o container principal ocupe toda a largura */
+  div[class*="max-w-"] {
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
