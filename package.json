@@ -8,7 +8,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "host": "astro dev --host"
+  
   },
   "dependencies": {
     "@sentry/astro": "^9.33.0",
