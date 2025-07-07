@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import backgroundImage from "../../public/images/bg-welcome.png";
 import gridDetails from "../../public/images/bg-grid.svg";
+import backgroundImage from "../../public/images/bg-welcome.png";
 import imgProfile from "../../public/images/img-welcome.png";
 import welcomeData from "../data/welcomeContent.json";
 import "../styles/global.css";
@@ -34,7 +34,9 @@ import Header from "./Header.astro";
       <div
         class="flex flex-col items-center text-center gap-6 z-10 mt-6 md:mb-40 md:items-start md:text-left md:w-1/2 order-1"
       >
-        <h1 class="text-[2rem] md:text-6xl font-playfair leading-none">
+        <h1
+          class="text-start text-[2rem] md:text-6xl font-playfair leading-none"
+        >
           {welcomeData.title}
         </h1>
         <p class="text-lg md:text-2xl max-w-xl font-poppins hidden md:block">
@@ -42,7 +44,7 @@ import Header from "./Header.astro";
         </p>
         <Button
           text={welcomeData.button_text}
-          class="bg-neutral-100 text-neutral-800"
+          class="hidden lg:inline bg-neutral-100 text-neutral-800"
           href={`https://wa.me/5518997845088`}
         />
       </div>

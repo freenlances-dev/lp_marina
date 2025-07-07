@@ -7,9 +7,10 @@ import Button from "./button.astro";
 
 interface Props {
   background?: boolean;
+  hiddenMenu?: boolean;
 }
 
-const { background = true } = Astro.props;
+const { background = true, hiddenMenu = false } = Astro.props;
 ---
 
 <div class={background ? "bg-neutral-700" : "bg-transparent"}>
@@ -46,7 +47,10 @@ const { background = true } = Astro.props;
         />
       </div>
 
-      <button id="menu-toggle" class="lg:hidden">
+      <button
+        id="menu-toggle"
+        class={`lg:hidden ${hiddenMenu ? "hidden" : "block"}`}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
