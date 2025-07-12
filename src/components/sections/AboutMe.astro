@@ -8,7 +8,9 @@ import AboutCard from "../ui/aboutCard.astro";
 ---
 
 <section class="bg-yellow-light" id="about">
-  <div class="max-w-[1420px] mx-auto px-6 py-14 lg:py-24">
+  <div
+    class="max-w-[1420px] mx-auto px-6 py-14 lg:py-24 flex flex-col items-center"
+  >
     <div class="flex flex-col gap-4">
       <div class="w-1/4 leading-12 mb-8">
         <div class="pr-2">
@@ -28,7 +30,7 @@ import AboutCard from "../ui/aboutCard.astro";
       <div
         class="w-full flex flex-col lg:flex-row justify-center lg:justify-auto items-center"
       >
-        <div class="relative w-full mb-6 lg:mb-0 mr-6">
+        <div class="relative w-full max-w-[400px] mx-auto mb-6 lg:mb-0 lg:mr-6">
           <Image src={marina_um} alt="Marina" class="w-full rounded-md" />
           <div
             class="absolute bottom-0 left-0 right-0 bg-neutral-100/60 p-4 rounded-b-md h-[72px] lg:hidden shadow-md backdrop-blur-sm"
