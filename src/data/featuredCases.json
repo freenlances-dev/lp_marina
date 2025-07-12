@@ -3,24 +3,29 @@
   "description": "Conheça alguns dos casos em que atuei, respeitando a confidencialidade dos clientes, mas ilustrando minha abordagem resultados obtidos.",
   "cases": [
     {
-      "title": "Reestruturação Societária",
-      "description": "Conduzi uma complexa reestruturação societária para uma empresa familiar de médio porte, resolvendo conflitos internos e estabelecendo uma governança eficiente que permitiu o crescimento sustentável do negócio.",
-      "tag": "Direito Empresarial"
+      "title": "Insalubridade reconhecida",
+      "description": "Nosso escritório garantiu o pagamento do adicional de insalubridade em grau máximo a um servidor público da saúde que atuou na linha de frente durante a pandemia. A decisão reconheceu a exposição a agentes nocivos e assegurou a devida compensação pelos riscos enfrentados.",
+      "tag": "Direito Público"
     },
     {
-      "title": "Regularização Imobiliária",
-      "description": "Conduzi um processo de regularização de um imóvel com pendências documentais de décadas, resolvendo questões complexas de registro e permitindo que o cliente finalmente obtivesse o título definitivo de propriedade.",
+      "title": "Vícios em imóvel",
+      "description": "Obtivemos indenização para uma cliente por defeitos em imóvel recém-adquirido, comprovados por perícia técnica. A sentença garantiu recursos para os reparos e compensação por danos morais, reafirmando nossa defesa eficaz dos direitos do consumidor no mercado imobiliário.",
       "tag": "Direito Imobiliário"
     },
     {
-      "title": "Acordo Familiar Complexo",
-      "description": "Mediei um acordo familiar envolvendo partilha de bens e guarda compartilhada, criando uma solução que atendeu aos interesses de todas as partes e priorizou o bem-estar dos filhos menores.",
-      "tag": "Direito de Família"
+      "title": "Piso salarial corrigido",
+      "description": "Conquistamos judicialmente a regularização do piso salarial de um servidor público que recebia abaixo do previsto em lei. A decisão assegurou o pagamento correto com efeitos retroativos, reconhecendo o direito à valorização profissional.",
+      "tag": "Direito Público"
     },
     {
-      "title": "Resolução de Disputa Contratual",
-      "description": "Representei um cliente em uma disputa contratual complexa, utilizando técnicas de mediação para alcançar um acordo favorável, evitando um processo judicial longo e preservando a relação comercial entre as partes.",
-      "tag": "Direito Civil"
+      "title": "Vitória no STJ",
+      "description": "Em atuação estratégica no Superior Tribunal de Justiça (STJ), conseguimos reverter decisão anterior por meio de agravo interno, garantindo o retorno do processo à instância de origem. O caso reforça nosso compromisso técnico em todas as instâncias judiciais.",
+      "tag": "Contencioso"
+    },
+    {
+      "title": "Indenização a moradores",
+      "description": "Obtivemos decisão favorável para moradores prejudicados por vícios construtivos graves, garantindo indenizações por danos materiais e morais. A sentença reconheceu a violação à dignidade e assegurou o direito a um lar seguro e habitável.",
+      "tag": "Direito do Consumidor"
     }
   ]
 }

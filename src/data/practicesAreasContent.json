@@ -1,32 +1,32 @@
 [
   {
     "icon": "building",
-    "title": "Direito Empresarial",
-    "description": "Assessoria jurídica completa para empresas, incluindo contratos, compliance, reestruturação societária e gestão de riscos legais."
+    "title": "Direito Público",
+    "description": "Atuação especializada em questões envolvendo empregados públicos e servidores celetistas, com foco em estabilidade, concursos, regime disciplinar e direitos trabalhistas no setor público."
   },
   {
     "icon": "college",
     "title": "Direito Civil",
-    "description": "Atuação em questões contratuais, responsabilidade civil, direitos reais, família e sucessões, com foco na resolução eficiente de conflitos."
+    "description": "Atuação em demandas contratuais, responsabilidade civil, direitos reais, família e sucessões, sempre com foco na prevenção de litígios e soluções eficientes."
   },
   {
     "icon": "book",
     "title": "Contencioso",
-    "description": "Representação em processos judiciais e administrativos, com estratégias processuais customizadas para cada caso."
+    "description": "Representação técnica em processos judiciais e administrativos, com elaboração de estratégias jurídicas personalizadas para cada contexto."
   },
   {
     "icon": "hands",
-    "title": "Mediação e Arbitragem",
-    "description": "Resolução alternativa de conflitos, oferecendo soluções mais rápidas, econômicas e menos desgastantes que o processo judicial."
+    "title": "Direito do Consumidor",
+    "description": "Atendimento voltado à solução ágil de conflitos entre consumidores e fornecedores, priorizando métodos alternativos e menos onerosos de resolução."
   },
   {
     "icon": "home",
     "title": "Direito Imobiliário",
-    "description": "Assessoria em operações imobiliárias, contratos de compra e venda, locação, usucapião e regularização de imóveis."
+    "description": "Assessoria completa em negócios imobiliários, abrangendo contratos, regularização de imóveis, usucapião, locações e due diligence jurídica."
   },
   {
     "icon": "users",
     "title": "Direito de Família",
-    "description": "Acompanhamento em divórcios, inventários, guarda de filhos, pensão alimentícia e outros assuntos familiares, com sensibilidade e discrição."
+    "description": "Atendimento acolhedor e ético em questões familiares, como divórcios, inventários, guarda, pensão e planejamento sucessório, com sigilo e empatia."
   }
 ]
