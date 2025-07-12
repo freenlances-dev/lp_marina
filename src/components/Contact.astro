@@ -13,7 +13,7 @@ import Button from "./button.astro";
       src={contactImage}
       alt="Decoração contato"
       class="opacity-40"
-      loading="lazy"
+      loading="eager"
     />
   </div>
 
@@ -45,7 +45,7 @@ import Button from "./button.astro";
         </div>
       </div>
 
-      <div class="w-full lg:w-1/2">
+      <div class="w-full lg:w-1/2 h-fit self-center">
         <div class="bg-neutral-100 rounded-lg p-6 lg:p-12 h-full flex flex-col">
           <div>
             <h3
@@ -55,7 +55,7 @@ import Button from "./button.astro";
             </h3>
           </div>
 
-          <div>
+          <div class="z-50">
             <form class="w-full" id="contactForm">
               <label
                 class="font-poppins text-sm font-medium text-neutral-700 block"
