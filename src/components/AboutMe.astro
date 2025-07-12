@@ -1,0 +1,77 @@
+---
+import Image from "astro/components/Image.astro";
+import marina_um from "../../public/images/img_marina_about_me_1.webp";
+import marina_dois from "../../public/images/img_marina_about_me_2.webp";
+import aboutMeContent from "../data/aboutMeContent.json";
+import "../styles/global.css";
+import AboutCard from "./aboutCard.astro";
+---
+
+<section class="bg-yellow-light" id="about">
+  <div class="max-w-[1420px] mx-auto px-6 py-14 lg:py-24">
+    <div class="flex flex-col gap-4">
+      <div class="w-1/4 leading-12 mb-8">
+        <div class="pr-2">
+          <p
+            class="font-poppins font-medium text-sm text-neutral-600 uppercase whitespace-nowrap"
+          >
+            SOBRE MIM
+          </p>
+          <h2
+            class="font-playfair text-[2rem] lg:text-[3.5rem] text-neutral-800"
+          >
+            {aboutMeContent.about_me_title}
+          </h2>
+        </div>
+      </div>
+
+      <div
+        class="w-full flex flex-col lg:flex-row justify-center lg:justify-auto items-center"
+      >
+        <div class="relative w-full mb-6 lg:mb-0 mr-6">
+          <Image src={marina_um} alt="Marina" class="w-full rounded-md" />
+          <div
+            class="absolute bottom-0 left-0 right-0 bg-neutral-100/60 p-4 rounded-b-md h-[72px] lg:hidden shadow-md backdrop-blur-sm"
+          >
+            <h3 class="font-poppins text-neutral-700 text-sm font-medium">
+              Marina Barroquelo Viana Grigolli
+            </h3>
+            <p class="font-poppins text-neutral-800 text-xs">
+              Advogada Especialista em Direito Cível e Imobiliário
+            </p>
+          </div>
+        </div>
+        <div class="font-poppins text-lg lg:text-xl text-neutral-800 space-y-4">
+          <h1 class="hidden lg:block font-playfair text-[1.75rem]">
+            {aboutMeContent.about_me_subtitle}
+          </h1>
+          <p>{aboutMeContent.about_me_content_p1}</p>
+          <p>{aboutMeContent.about_me_content_p2}</p>
+        </div>
+      </div>
+
+      <div
+        class="w-full flex flex-col lg:flex-row items-center justify-between gap-8 mt-12"
+      >
+        <div class="flex flex-col gap-6 w-full justify-center items-center">
+          <div class="lg:w-[507px] flex flex-col gap-4">
+            {
+              aboutMeContent.aboutCard.map((about) => (
+                <AboutCard
+                  icon={about.icon}
+                  title={about.title}
+                  description={about.description}
+                />
+              ))
+            }
+          </div>
+        </div>
+        <Image
+          src={marina_dois}
+          alt="Marina"
+          class="hidden lg:block lg:w-1/4 rounded-md"
+        />
+      </div>
+    </div>
+  </div>
+</section>
