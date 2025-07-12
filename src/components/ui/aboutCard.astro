@@ -3,7 +3,7 @@ import Image from "astro/components/Image.astro";
 
 const { icon, title, description } = Astro.props;
 
-const allIcons = await Astro.glob("../../public/icons/*.svg");
+const allIcons = await Astro.glob("../../../public/icons/*.svg");
 
 const dynamicIconModule = allIcons.find((module) => {
   const fileName = module.default.src.split("/").pop().split(".")[0];
@@ -12,7 +12,7 @@ const dynamicIconModule = allIcons.find((module) => {
 
 const finalIconSrc = dynamicIconModule ? dynamicIconModule.default : "";
 
-import fallbackIcon from "../../public/icons/scales.svg";
+import fallbackIcon from "../../../public/icons/scales.svg";
 ---
 
 <div
