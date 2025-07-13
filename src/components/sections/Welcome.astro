@@ -35,11 +35,13 @@ import Button from "../ui/button.astro";
         class="flex flex-col items-center text-center gap-6 z-10 mt-6 md:mb-40 md:items-start md:text-left md:w-1/2 order-1"
       >
         <h1
-          class="text-start text-[2rem] md:text-6xl font-playfair leading-none"
+          class="text-[2rem] md:text-6xl text-center md:text-start font-playfair leading-none"
         >
           {welcomeData.title}
         </h1>
-        <p class="text-lg md:text-2xl max-w-xl font-poppins hidden md:block">
+        <p
+          class="text-base md:text-2xl text-center md:text-start max-w-xl font-poppins"
+        >
           {welcomeData.description}
         </p>
         <Button
