@@ -10,7 +10,6 @@
     "lint": "eslint . --ext .js,.ts,.astro",
     "format": "prettier --write .",
     "host": "astro dev --host"
-  
   },
   "dependencies": {
     "@sentry/astro": "^9.33.0",
@@ -20,6 +19,13 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
-    "typescript": "^5.8.3"
+    "@eslint/js": "^9.31.0",
+    "astro-eslint-parser": "^1.2.2",
+    "eslint": "^9.31.0",
+    "eslint-plugin-astro": "^1.3.1",
+    "globals": "^16.3.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.36.0"
   }
 }

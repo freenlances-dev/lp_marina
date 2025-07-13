@@ -27,13 +27,15 @@ import Button from "../ui/button.astro";
             Contato
           </p>
           <h2
-            class="font-playfair text-[2rem] lg:text-[42px] text-neutral-100 leading-tight"
+            class="font-playfair text-[2rem] lg:text-[42px] text-neutral-100 leading-12"
           >
             {contactContent.title}
           </h2>
         </div>
 
-        <div class="space-y-6 flex-grow flex flex-col justify-center">
+        <div
+          class="space-y-6 flex-grow flex flex-col justify-center no-underline"
+        >
           {
             contactContent.contacts.map((contact) => (
               <ContactItem
@@ -49,7 +51,7 @@ import Button from "../ui/button.astro";
         <div class="bg-neutral-100 rounded-lg p-6 lg:p-12 h-full flex flex-col">
           <div>
             <h3
-              class="font-playfair text-[28px] lg:text-[2rem] font-semibold text-neutral-800 mb-8"
+              class="font-playfair text-[28px] lg:text-[2rem] font-semibold text-neutral-800 mb-8 leading-12"
             >
               {contactContent.titleCard}
             </h3>
@@ -93,7 +95,7 @@ import Button from "../ui/button.astro";
       event.preventDefault();
 
       const fullNameInput = document.getElementById(
-        "fullName"
+        "fullName",
       ) as HTMLInputElement | null;
       const fullName = fullNameInput?.value || "";
 
