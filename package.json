@@ -10,7 +10,6 @@
     "lint": "eslint . --ext .js,.ts,.astro",
     "format": "prettier --write .",
     "host": "astro dev --host"
-  
   },
   "dependencies": {
     "@sentry/astro": "^9.33.0",
@@ -20,6 +19,8 @@
     "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "typescript": "^5.8.3"
   }
 }
