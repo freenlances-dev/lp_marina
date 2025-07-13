@@ -27,17 +27,17 @@ import AboutCard from "../ui/aboutCard.astro";
         </div>
       </div>
 
-      <div
-        class="w-full flex flex-col lg:flex-row justify-center lg:justify-auto items-center"
-      >
-        <div class="relative w-full max-w-[400px] mx-auto mb-6 lg:mb-0 lg:mr-6">
+      <div class="w-full flex flex-col lg:flex-row justify-center items-start">
+        <div
+          class="relative w-full lg:w-1/3 max-w-[400px] mx-auto mb-6 lg:mb-0 lg:mr-8"
+        >
           <Image
             src={marina_um}
             alt="Marina"
-            class="w-full max-w-[400px] h-auto rounded-md"
+            class="w-full h-auto rounded-md"
           />
           <div
-            class="absolute bottom-0 left-0 right-0 bg-neutral-100/60 p-4 rounded-b-md h-[72px] lg:hidden shadow-md backdrop-blur-sm"
+            class="absolute bottom-0 left-0 right-0 bg-neutral-100/60 p-4 rounded-b-md h-fit lg:hidden shadow-md backdrop-blur-sm"
           >
             <h3 class="font-poppins text-neutral-700 text-sm font-medium">
               Marina Barroquelo Viana Grigolli
@@ -47,12 +47,15 @@ import AboutCard from "../ui/aboutCard.astro";
             </p>
           </div>
         </div>
-        <div class="font-poppins text-lg lg:text-xl text-neutral-800 space-y-4">
+        <div
+          class="font-poppins text-lg lg:text-xl text-neutral-800 space-y-4 w-full lg:w-2/3"
+        >
           <h1 class="hidden lg:block font-playfair text-[1.75rem]">
             {aboutMeContent.about_me_subtitle}
           </h1>
           <p>{aboutMeContent.about_me_content_p1}</p>
           <p>{aboutMeContent.about_me_content_p2}</p>
+          <p>{aboutMeContent.about_me_content_p3}</p>
         </div>
       </div>
 
@@ -67,7 +70,7 @@ import AboutCard from "../ui/aboutCard.astro";
             class="w-full h-auto rounded-md"
           />
           <div
-            class="absolute bottom-0 left-0 right-0 bg-neutral-100/60 p-4 rounded-b-md h-[72px] shadow-md backdrop-blur-sm"
+            class="absolute bottom-0 left-0 right-0 bg-neutral-100/60 p-4 rounded-b-md h-fit shadow-md backdrop-blur-sm"
           >
             <p class="font-poppins italic text-neutral-700 text-sm">
               “A advocacia é o instrumento da justiça e da transformação
@@ -75,24 +78,35 @@ import AboutCard from "../ui/aboutCard.astro";
             </p>
           </div>
         </div>
-        <div class="flex flex-col gap-6 w-full justify-center items-center">
-          <div class="lg:w-[507px] flex flex-col gap-4">
-            {
-              aboutMeContent.aboutCard.map((about) => (
-                <AboutCard
-                  icon={about.icon}
-                  title={about.title}
-                  description={about.description}
-                />
-              ))
-            }
+        <div
+          class="w-full flex flex-col lg:flex-row items-center justify-between gap-8 mt-12"
+        >
+          {/* Cards e imagem lado a lado no desktop */}
+          <div class="flex flex-col lg:flex-row w-full gap-8 items-start">
+            <div class="flex flex-col gap-6 w-full lg:w-2/3 items-center">
+              <div class="lg:w-[507px] flex flex-col gap-4">
+                {
+                  aboutMeContent.aboutCard.map((about) => (
+                    <AboutCard
+                      icon={about.icon}
+                      title={about.title}
+                      description={about.description}
+                    />
+                  ))
+                }
+              </div>
+            </div>
+            <div
+              class="relative w-full lg:w-1/3 max-w-[400px] mx-auto mb-6 lg:mb-0"
+            >
+              <Image
+                src={marina_dois}
+                alt="Marina"
+                class="w-full h-auto rounded-md hidden lg:block"
+              />
+            </div>
           </div>
         </div>
-        <Image
-          src={marina_dois}
-          alt="Marina"
-          class="hidden lg:block w-full max-w-[400px] h-auto rounded-md"
-        />
       </div>
     </div>
   </div>
