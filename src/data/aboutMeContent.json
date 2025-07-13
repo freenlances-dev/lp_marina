@@ -1,6 +1,6 @@
 {
   "about_me_title": "Advocacia Personalizada",
-  "about_me_subtitle": "Sócia-Fundadora | Advogada Especialista em Direito Cível e Imobiliário",
+  "about_me_subtitle": "Sócia-Fundadora | Advogada atuante em Direito Civil e Consumidor",
   "about_me_content_p1": "Marina Barroquelo Viana Grigolli é advogada e sócia-fundadora do escritório Barroquelo Viana Advogados. Reconhecida por sua abordagem técnica e estratégica, Marina possui sólida experiência na condução de demandas contenciosas complexas, sempre com foco na resolução efetiva de conflitos.",
   "about_me_content_p2": "Seu trabalho é pautado pela análise profunda de cada caso e pela elaboração de estratégias jurídicas sob medida, adaptadas à realidade e às necessidades específicas de cada cliente. Acredita na acessibilidade do Direito e na importância de uma comunicação clara, direta e transparente, promovendo segurança jurídica e confiança ao longo de todo o processo.",
   "about_me_content_p3": "Marina valoriza o relacionamento próximo com os clientes, conduzindo pessoalmente os atendimentos e o acompanhamento dos casos. Essa atuação direta proporciona uma experiência mais humana, personalizada e alinhada à filosofia do escritório: oferecer soluções jurídicas eficazes, com ética, excelência técnica e comprometimento.",
@@ -8,16 +8,16 @@
     {
       "icon": "graduation-hat",
       "title": "Formação Acadêmica",
-      "description": "Bacharel em Direito - Toledo Prudente, especialista em Direito Civil e do Consumidor"
+      "description": "Bacharel em Direito - Toledo Prudente Centro Universitário, atuante em Direito Civil e do Consumidor"
     },
     {
       "icon": "scales",
       "title": "Registro Profissional",
-      "description": "OAB/SP nº 123.456, atuação em todo território nacional"
+      "description": "OAB/SP nº 414.439, atuação em todo território nacional"
     },
     {
       "icon": "hands",
-      "title": "Membra da OAB",
+      "title": "Membra de Comissão OAB",
       "description": "Membra efetiva da Comissão da Advocacia de Família e Sucessões"
     }
   ]
